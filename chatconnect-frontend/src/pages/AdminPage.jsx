@@ -55,7 +55,7 @@ const S = {
   modalBody: { padding: "20px 24px 24px" },
   label: { display: "block", color: "#aaa", fontSize: "11px", fontWeight: "700", letterSpacing: "1px", textTransform: "uppercase", marginBottom: "8px", marginTop: "16px" },
   input: { width: "100%", background: "#1A1A26", border: "1px solid #2C2C3E", color: "#fff", borderRadius: "8px", padding: "11px 14px", fontSize: "14px", outline: "none", boxSizing: "border-box" },
-  saveBtn: { width: "100%", marginTop: "20px", background: "linear-gradient(135deg,#00E5FF,#00a8cc)", border: "none", color: "#000", borderRadius: "8px", padding: "12px", fontSize: "14px", fontWeight: "700", cursor: "pointer" },
+  saveBtn: {marginTop: "20px",marginLeft:"Auto",marginRight:"Auto", background: "linear-gradient(135deg,#00E5FF,#00a8cc)", border: "none", color: "#000", borderRadius: "8px", padding: "12px", fontSize: "14px", fontWeight: "700", cursor: "pointer", display: "block" },
   emptyRow: { padding: "40px 20px", textAlign: "center", color: "#444", fontSize: "14px" },
 };
 
@@ -468,16 +468,17 @@ export default function AdminPage({ onLogout }) {
                   <input type="password" style={S.input} placeholder="At least 8 characters" value={settingsForm.newVal} onChange={e => setSettingsForm(f => ({ ...f, newVal: e.target.value }))} />
                   <label style={S.label}>Confirm New Password</label>
                   <input type="password" style={S.input} placeholder="Repeat new password" value={settingsForm.confirm} onChange={e => setSettingsForm(f => ({ ...f, confirm: e.target.value }))} />
+                  <button style={S.saveBtn} onClick={submitSettings}>Save Changes</button>
                 </>
               ) : (
                 <>
                   <label style={S.label}>New Phone Number</label>
                   <input type="number" style={S.input} placeholder="10-digit mobile number" value={settingsForm.newVal} onChange={e => setSettingsForm(f => ({ ...f, newVal: e.target.value }))} />
+                  <button style={S.saveBtn} onClick={submitSettings}>Save Changes</button>
                 </>
               )}
               {settingsError && <div style={{ marginTop: "14px", padding: "10px 14px", borderRadius: "8px", background: "rgba(255,77,77,0.1)", border: "1px solid rgba(255,77,77,0.3)", color: "#ff4d4d", fontSize: "13px", fontWeight: "600" }}>{settingsError}</div>}
               {settingsSuccess && <div style={{ marginTop: "14px", padding: "10px 14px", borderRadius: "8px", background: "rgba(0,229,255,0.1)", border: "1px solid rgba(0,229,255,0.3)", color: "#00E5FF", fontSize: "13px", fontWeight: "600" }}>{settingsSuccess}</div>}
-              <button style={S.saveBtn} onClick={submitSettings}>Save Changes</button>
             </div>
           </div>
         </div>
