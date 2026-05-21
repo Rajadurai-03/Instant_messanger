@@ -25,7 +25,7 @@ You only need **4 things** installed before running this project.
 
 ### 2. Java 17 (for the backend)
 
-- Download from: **https://adoptium.net**
+- Download from: **[Oracle Java Downloads](https://www.oracle.com/in/java/technologies/downloads/)**
 - Click **Latest LTS Release** → download `.msi` for Windows
 - During install, check **"Set JAVA_HOME variable"**
 - Verify:
